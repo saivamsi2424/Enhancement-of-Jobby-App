@@ -1,0 +1,144 @@
+/* Common Styles */
+.nav-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 20px 30px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.website-logo {
+  width: 150px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu-item {
+  margin-right: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4b8b9a;
+}
+
+.logout-desktop-btn {
+  background-color: #4b8b9a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-desktop-btn:hover {
+  background-color: #3a6a6a;
+}
+
+/* Mobile Styles */
+.nav-bar-mobile-logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-bar-mobile-icons-container {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar-mobile-icons-container li {
+  margin-left: 20px;
+}
+
+.nav-item-mobile-link,
+.navl-item-mobile-link {
+  font-size: 24px;
+  color: #333333;
+}
+
+.nav-item-mobile-link:hover,
+.navl-item-mobile-link:hover {
+  color: #4b8b9a;
+}
+
+.nav-mobile-btn {
+  background: none;
+  border: none;
+  color: #333333;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-bar-large-container {
+    display: none;
+  }
+
+  .nav-bar-mobile-logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-bar-mobile-icons-container {
+    display: flex;
+  }
+
+  .nav-mobile-btn {
+    font-size: 24px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .nav-bar-mobile-icons-container {
+    display: none;
+  }
+
+  .nav-bar-large-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-menu {
+    display: flex;
+    margin-left: 30px;
+  }
+
+  .nav-menu-item {
+    margin-right: 30px;
+  }
+
+  .logout-desktop-btn {
+    display: inline-block;
+  }
+}

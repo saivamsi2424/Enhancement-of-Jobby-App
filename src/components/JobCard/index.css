@@ -1,0 +1,188 @@
+/* JobCard Styles */
+
+/* Link Item */
+.link-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Job Item Container */
+.job-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.job-item:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo, Title, and Location Container */
+.logo-title-location-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+/* Logo and Title Section */
+.log-title-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.title-rating-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.rating-icon {
+  color: #ffb400;
+  margin-right: 5px;
+}
+
+.rating-heading {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Location and Employment Section */
+.locationn-package-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.location-employee-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.location-icon {
+  color: #7a7a7a;
+  margin-right: 8px;
+}
+
+.location-heading {
+  font-size: 14px;
+  color: #555;
+}
+
+.employee-type-container {
+  display: flex;
+  align-items: center;
+}
+
+.brief-case-icon {
+  color: #7a7a7a;
+  margin-right: 8px;
+}
+
+.employee-type-description {
+  font-size: 14px;
+  color: #555;
+}
+
+.package-para {
+  font-size: 14px;
+  color: #4b8b9a;
+  font-weight: bold;
+}
+
+/* Divider Line */
+.line {
+  margin: 15px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Description Heading */
+.description-heading {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Job Description Text */
+.description-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-item {
+    padding: 15px;
+  }
+
+  .logo-title-location-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .log-title-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .locationn-package-container {
+    margin-top: 10px;
+  }
+
+  .location-employee-container {
+    margin-bottom: 5px;
+  }
+
+  .line {
+    margin: 10px 0;
+  }
+
+  .description-heading {
+    font-size: 14px;
+  }
+
+  .description-text {
+    font-size: 13px;
+  }
+}

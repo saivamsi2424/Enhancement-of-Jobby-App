@@ -1,0 +1,93 @@
+/* ProfileCard Styles */
+.profile-success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4b8b9a;
+  margin-bottom: 20px;
+}
+
+.profile-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-description {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  max-width: 400px;
+}
+
+.prodile-error-view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-failure-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff0a0a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-failure-button:hover {
+  background-color: #e60000;
+}
+
+/* Loading State */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .profile-success-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-heading {
+    font-size: 20px;
+  }
+
+  .profile-description {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .profile-failure-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
