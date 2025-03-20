@@ -27,6 +27,29 @@ const employmentTypesList = [
   },
 ]
 
+const locationsList = [
+  {
+    label: 'Hyderabad',
+    locationId: 'Hyderabad',
+  },
+  {
+    label: 'Bangalore',
+    locationId: 'Bangalore',
+  },
+  {
+    label: 'Chennai',
+    locationId: 'Chennai',
+  },
+  {
+    label: 'Delhi',
+    locationId: 'Delhi',
+  },
+  {
+    label: 'Mumbai',
+    locationId: 'Mumbai',
+  },
+]
+
 const salaryRangesList = [
   {
     salaryRangeId: '1000000',
@@ -60,6 +83,7 @@ class Jobs extends Component {
     employeeType: [],
     minimumSalary: 0,
     searchInput: '',
+    selectedLocations: [],
   }
 
   componentDidMount() {
@@ -67,6 +91,7 @@ class Jobs extends Component {
   }
 
   getJobs = async () => {
+    const {selectedLocations} = this.state
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
@@ -97,8 +122,22 @@ class Jobs extends Component {
         rating: eachJob.rating,
         title: eachJob.title,
       }))
+
+      let filteredData = updatedJobsData
+      if (selectedLocations.length !== 0) {
+        filteredData = updatedJobsData.filter(job => {
+          let isLocationIncluded = false
+          selectedLocations.forEach(location => {
+            if (job.location === location) {
+              isLocationIncluded = true
+            }
+            return isLocationIncluded
+          })
+          return isLocationIncluded
+        })
+      }
       this.setState({
-        jobsList: updatedJobsData,
+        jobsList: filteredData,
         apiStatus: apiStatusConstants.success,
       })
     } else {
@@ -110,6 +149,7 @@ class Jobs extends Component {
 
   renderJobsList = () => {
     const {jobsList} = this.state
+    console.log(jobsList)
     const renderJobsList = jobsList.length > 0
     return renderJobsList ? (
       <div className="all-jobs-container">
@@ -199,6 +239,15 @@ class Jobs extends Component {
     )
   }
 
+  addLocation = location => {
+    const {selectedLocations} = this.state
+    console.log(selectedLocations)
+    this.setState(prevState => ({
+      selectedLocations: [...prevState.selectedLocations, location],
+    }))
+    this.getJobs
+  }
+
   render() {
     const {searchInput} = this.state
     return (
@@ -207,6 +256,8 @@ class Jobs extends Component {
         <div className="jobs-container">
           <div className="jobs-content">
             <Filters
+              locationsList={locationsList}
+              addLocation={this.addLocation}
               employmentTypesList={employmentTypesList}
               salaryRangesList={salaryRangesList}
               changeSearchInput={this.changeSearchInput}
