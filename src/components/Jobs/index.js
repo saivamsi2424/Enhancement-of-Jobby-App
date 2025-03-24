@@ -92,6 +92,7 @@ class Jobs extends Component {
 
   getJobs = async () => {
     const {selectedLocations} = this.state
+    console.log(`rendered Locations ${selectedLocations}`)
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
@@ -110,6 +111,7 @@ class Jobs extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
+
     if (response.ok === true) {
       const data = await response.json()
       const updatedJobsData = data.jobs.map(eachJob => ({
@@ -240,12 +242,17 @@ class Jobs extends Component {
   }
 
   addLocation = location => {
+    console.log(location)
     const {selectedLocations} = this.state
-    console.log(selectedLocations)
-    this.setState(prevState => ({
-      selectedLocations: [...prevState.selectedLocations, location],
-    }))
-    this.getJobs
+    console.log('loaction added')
+    if (selectedLocations.includes(location)) {
+      const updatedLocations = selectedLocations.filter(loc => loc !== location)
+      return this.setState({selectedLocations: updatedLocations}, this.getJobs)
+    }
+    return this.setState(
+      {selectedLocations: [...selectedLocations, location]},
+      this.getJobs,
+    )
   }
 
   render() {

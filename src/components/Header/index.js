@@ -16,14 +16,14 @@ const Header = props => {
   return (
     <nav className="nav-header">
       <div className="nav-content">
+        <Link to="/">
+          <img
+            className="website-logo"
+            alt="website logo"
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+          />
+        </Link>
         <div className="nav-bar-mobile-logo-container">
-          <Link to="/">
-            <img
-              className="website-logo"
-              alt="website logo"
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png "
-            />
-          </Link>
           <ul className="nav-bar-mobile-icons-container">
             <li>
               <Link to="/">
@@ -47,13 +47,6 @@ const Header = props => {
           </ul>
         </div>
         <div className="nav-bar-large-container">
-          <Link to="/">
-            <img
-              className="website-logo"
-              alt="website logo"
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png "
-            />
-          </Link>
           <ul className="nav-menu">
             <li className="nav-menu-item">
               <Link to="/" className="nav-link">
